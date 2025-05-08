@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Models;
 
 namespace WebApp_OpenIDConnect_DotNet
 {
@@ -40,8 +41,9 @@ namespace WebApp_OpenIDConnect_DotNet
                     .Build();
                 options.Filters.Add(new AuthorizeFilter(policy));
             });
-           services.AddRazorPages()
-                .AddMicrosoftIdentityUI();
+            services.AddRazorPages()
+                 .AddMicrosoftIdentityUI();
+            services.Configure<AzureAdOptions>(Configuration.GetSection("AzureAd"));
         }
         // </ Configure_service_ref_for_docs_ms >
 

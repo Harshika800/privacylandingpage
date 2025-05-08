@@ -6,3 +6,73 @@
     <h1 class="display-4">Privacy Copilot</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+@{
+    ViewData["Title"] = "Marketplace Subscription Info";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcomeee</h1>
+    <div>
+        <p>@ViewBag.QueryTokenMessage</p>
+        <p>@ViewBag.HeaderTokenMessage</p>
+    </div>
+    @if (ViewBag.DecodedQueryToken != null)
+    {
+        <p><strong>Decoded Query Token:</strong> @ViewBag.DecodedQueryToken</p>
+    }
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h4>Subscription Details</h4>
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Subscription Name</th>
+                        <td>@ViewBag.SubscriptionName</td>
+                    </tr>
+                    <tr>
+                        <th>Offer Name</th>
+                        <td>@ViewBag.OfferId</td>
+                    </tr>
+                    <tr>
+                        <th>Plan</th>
+                        <td>@ViewBag.PlanId</td>
+                    </tr>
+                    <tr>
+                        <th>Purchaser Email</th>
+                        <td>@ViewBag.EmailId</td>
+                    </tr>
+                    <tr>
+                        <th>Azure Tenant ID</th>
+                        <td>@ViewBag.TenantId</td>
+                    </tr>
+                    <tr>
+                        <th>Country</th>
+                        <td>Country name not available</td>
+                    </tr>
+                    <tr>
+                        <th>Subscription Status</th>
+                        <td>@ViewBag.SubscriptionStatus</td>
+                    </tr>
+                    <tr>
+                        <th>Auto Renewal</th>
+                        <td>@ViewBag.AutoRenew</td>
+                    </tr>
+                    <tr>
+                        <th>Special Shipping Instruction</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h2>Activate Subscription</h2>
+                        </td>
+                        <td>
+                            <button id="activateButton" class="btn btn-primary">Activate Subscription</button>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
